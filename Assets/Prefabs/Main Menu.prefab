@@ -970,6 +970,7 @@ GameObject:
   - component: {fileID: 1333007793877861605}
   - component: {fileID: 5551086160240284720}
   - component: {fileID: 5078469505337094365}
+  - component: {fileID: 6755216278804530638}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1049,6 +1050,20 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &6755216278804530638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5910800489216333135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859bf70622a5c8b4c827e3f9a89c371f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
+  gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
 --- !u!1 &6396344087715155768
 GameObject:
   m_ObjectHideFlags: 0
