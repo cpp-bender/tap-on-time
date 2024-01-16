@@ -6,8 +6,8 @@ namespace TapOnTime
     public class EndMenu : MonoBehaviour
     {
         [Header("EVENTS")]
-        public VoidEventChannelSO gameStartEvent;
         public VoidEventChannelSO gameInitEvent;
+        public VoidEventChannelSO gameStartEvent;
 
         private void OnEnable()
         {

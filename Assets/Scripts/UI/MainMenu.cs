@@ -6,8 +6,8 @@ namespace TapOnTime
     public class MainMenu : MonoBehaviour
     {
         [Header("EVENTS")]
-        public VoidEventChannelSO gameStartEvent;
         public VoidEventChannelSO gameInitEvent;
+        public VoidEventChannelSO gameStartEvent;
 
         private void OnEnable()
         {
@@ -18,6 +18,7 @@ namespace TapOnTime
         private void OnDisable()
         {
             gameStartEvent.Event -= OnGameStarted;
+            gameInitEvent.Event -= OnGameInit;
         }
 
         private void OnGameStarted()

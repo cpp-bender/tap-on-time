@@ -2309,3 +2309,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef69f98735477a49accfc2e126d14c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
+  gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
