@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 2983509487422196676}
   - component: {fileID: 7449145049332179662}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,7 +1555,7 @@ GameObject:
   - component: {fileID: 4737833337821876833}
   - component: {fileID: 6009867130060472239}
   m_Layer: 5
-  m_Name: Bar
+  m_Name: 'Multiple Bar '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 4696306549913514674}
   - component: {fileID: 5259339123840834396}
   m_Layer: 5
-  m_Name: Indicator
+  m_Name: Indicator Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2309,5 +2309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef69f98735477a49accfc2e126d14c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
+  score: {fileID: 8204287357475219534}
+  cuteEmoji: {fileID: 7362247754962010655}
+  indicator: {fileID: 1189780211139217140}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
+  gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}

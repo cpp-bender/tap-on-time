@@ -101,8 +101,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2094d11ace0765b44a4889c91a15c50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
+  background: {fileID: 1889368539485291977}
+  currentLevelText: {fileID: 5211841061979127813}
+  nextLevelText: {fileID: 6976049644021374383}
+  currentPoint: {fileID: 20539477660988560}
+  targetText: {fileID: 3142397157549659504}
+  targetPoint: {fileID: 7466765839474160462}
+  outlineImage: {fileID: 7019911406325426995}
+  fillImage: {fileID: 8418510479589430006}
+  movingImage: {fileID: 7353682571797587132}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
+  gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
 --- !u!1 &2949107829575614308
 GameObject:
   m_ObjectHideFlags: 0

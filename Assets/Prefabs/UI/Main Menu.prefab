@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 4268238748992346730}
   - component: {fileID: 3127164081526614665}
   m_Layer: 5
-  m_Name: Tap To Play
+  m_Name: Tap To Play Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1062,8 +1062,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859bf70622a5c8b4c827e3f9a89c371f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
+  backgroundMain: {fileID: 58066269257152190}
+  settings: {fileID: 439533203343426552}
+  levelText: {fileID: 1208483333593724019}
+  tapToPlayText: {fileID: 892473797862605566}
+  playImage: {fileID: 4802354752745671563}
+  keys:
+  - {fileID: 5238767511856071196}
+  - {fileID: 7892787026546557325}
+  - {fileID: 3275770631367740069}
+  gemCount: {fileID: 7818075735448773989}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
+  gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
 --- !u!1 &6396344087715155768
 GameObject:
   m_ObjectHideFlags: 0

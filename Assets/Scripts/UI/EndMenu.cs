@@ -5,6 +5,13 @@ namespace TapOnTime
 {
     public class EndMenu : MonoBehaviour
     {
+        [Header("DEPENDENCIES - COMMON")]
+        public RectTransform score;
+        public RectTransform cuteEmoji;
+
+        [Header("DEPENDENCIES - MULTIPLE BAR")]
+        public RectTransform indicator;
+
         [Header("EVENTS")]
         public VoidEventChannelSO gameInitEvent;
         public VoidEventChannelSO gameStartEvent;

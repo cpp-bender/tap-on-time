@@ -5,6 +5,19 @@ namespace TapOnTime
 {
     public class MainMenu : MonoBehaviour
     {
+        [Header("DEPENDENCIES - COMMON")]
+        public RectTransform backgroundMain;
+        public RectTransform settings;
+        public RectTransform levelText;
+        public RectTransform tapToPlayText;
+        public RectTransform playImage;
+
+        [Header("DEPENDENCIES - KEY BAR")]
+        public RectTransform[] keys;
+
+        [Header("DEPENDENCIES - GEM BAR")]
+        public RectTransform gemCount;
+
         [Header("EVENTS")]
         public VoidEventChannelSO gameInitEvent;
         public VoidEventChannelSO gameStartEvent;
