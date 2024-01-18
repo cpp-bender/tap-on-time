@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3136249867005309728}
   - component: {fileID: 6935419452158638208}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 8040213219767487872}
   - component: {fileID: 3047323450015913585}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2067,7 +2067,7 @@ GameObject:
   - component: {fileID: 4183448102013974657}
   - component: {fileID: 8517534317877341796}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2309,8 +2309,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef69f98735477a49accfc2e126d14c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background0: {fileID: 5295921976198697613}
+  background1: {fileID: 6412023342452319284}
+  background2: {fileID: 5243090787692408125}
+  yourScoreText: {fileID: 310323421454302832}
+  congratzText: {fileID: 5551114629305652645}
+  scoreText: {fileID: 8204287357475219534}
   score: {fileID: 8204287357475219534}
   cuteEmoji: {fileID: 7362247754962010655}
   indicator: {fileID: 1189780211139217140}
+  multiplesParent: {fileID: 2007237495860441394}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}

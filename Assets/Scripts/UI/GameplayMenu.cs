@@ -4,7 +4,7 @@ using TMPro;
 
 namespace TapOnTime
 {
-    public class GameplayMenu : MonoBehaviour
+    public class GameplayMenu : MonoBehaviour, ICommon
     {
         [Header("DEPENDENCIES - COMMON")]
         public RectTransform background;
@@ -39,12 +39,27 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            //TODO:Handle this
+            Set(background.gameObject, false);
+            Set(currentLevelText.gameObject, false);
+            Set(nextLevelText.gameObject, false);
+
+            Set(currentPoint.gameObject, false); 
+            Set(targetText.gameObject, false);
+            Set(targetPoint.gameObject, false);
+            
+            Set(outlineImage.gameObject, false);
+            Set(fillImage.gameObject, false);
+            Set(movingImage.gameObject, false);
         }
 
         private void OnGameStarted()
         {
             //TODO:Hanle this
+        }
+
+        public void Set(GameObject go, bool on)
+        {
+            go.SetActive(on);
         }
     }
 }

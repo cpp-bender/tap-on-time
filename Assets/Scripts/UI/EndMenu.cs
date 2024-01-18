@@ -3,14 +3,20 @@ using UnityEngine;
 
 namespace TapOnTime
 {
-    public class EndMenu : MonoBehaviour
+    public class EndMenu : MonoBehaviour, ICommon
     {
         [Header("DEPENDENCIES - COMMON")]
-        public RectTransform score;
+        public RectTransform background0;
+        public RectTransform background1;
+        public RectTransform background2;
+        public RectTransform yourScoreText;
+        public RectTransform congratzText;
+        public RectTransform scoreText;
         public RectTransform cuteEmoji;
 
         [Header("DEPENDENCIES - MULTIPLE BAR")]
         public RectTransform indicator;
+        public RectTransform multiplesParent;
 
         [Header("EVENTS")]
         public VoidEventChannelSO gameInitEvent;
@@ -30,12 +36,26 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            //TODO:Handle this
+            Set(background0.gameObject, false);
+            Set(background1.gameObject, false);
+            Set(background2.gameObject, false);
+            Set(yourScoreText.gameObject, false);
+            Set(congratzText.gameObject, false);
+            Set(scoreText.gameObject, false);
+            Set(cuteEmoji.gameObject, false);
+            
+            Set(indicator.gameObject, false);
+            Set(multiplesParent.gameObject, false);
         }
 
         private void OnGameStarted()
         {
             //TODO:Hanle this
+        }
+
+        public void Set(GameObject go, bool on)
+        {
+            go.SetActive(on);
         }
     }
 }
