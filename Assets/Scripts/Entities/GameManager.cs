@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using SimpleEvent;
+using DG.Tweening;
 using CPPBENDER;
 
 namespace TapOnTime
@@ -17,6 +18,7 @@ namespace TapOnTime
             gameInitEvent?.Raise();
             yield return new WaitForMouseDown();
             gameStartEvent?.Raise();
+            DOTween.Init();
         }
     }
 }

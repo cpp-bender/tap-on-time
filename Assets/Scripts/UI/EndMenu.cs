@@ -5,8 +5,10 @@ namespace TapOnTime
 {
     public class EndMenu : BaseMenu
     {
+        [Header("COMPONENTS")]
+        public CanvasGroup group;
+
         [Header("DEPENDENCIES - COMMON")]
-        public RectTransform background0;
         public RectTransform background1;
         public RectTransform background2;
         public RectTransform yourScoreText;
@@ -36,16 +38,7 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            Set(background0.gameObject, false);
-            Set(background1.gameObject, false);
-            Set(background2.gameObject, false);
-            Set(yourScoreText.gameObject, false);
-            Set(congratzText.gameObject, false);
-            Set(scoreText.gameObject, false);
-            Set(cuteEmoji.gameObject, false);
-            
-            Set(indicator.gameObject, false);
-            Set(multiplesParent.gameObject, false);
+            group.alpha = 0f;
         }
 
         private void OnGameStarted()

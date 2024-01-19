@@ -5,6 +5,9 @@ namespace TapOnTime
 {
     public class MainMenu : BaseMenu
     {
+        [Header("COMPONENTS")]
+        public CanvasGroup group;
+
         [Header("DEPENDENCIES - COMMON")]
         public RectTransform backgroundMain;
         public RectTransform settings;
@@ -36,17 +39,7 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            Set(backgroundMain.gameObject, true);
-            Set(settings.gameObject, true);
-            Set(levelText.gameObject, true);
-            Set(tapToPlayText.gameObject, true);
-            Set(playImage.gameObject, true);
-
-            Set(keys[0].gameObject, true);
-            Set(keys[1].gameObject, true);
-            Set(keys[2].gameObject, true);
-
-            Set(gemCount.gameObject, true);
+            group.alpha = 1f;
         }
 
         private void OnGameStarted()

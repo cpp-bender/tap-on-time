@@ -6,8 +6,10 @@ namespace TapOnTime
 {
     public class GameplayMenu : BaseMenu
     {
+        [Header("COMPONENTS")]
+        public CanvasGroup group;
+
         [Header("DEPENDENCIES - COMMON")]
-        public RectTransform background;
         public TextMeshProUGUI currentLevelText;
         public TextMeshProUGUI nextLevelText;
 
@@ -39,17 +41,7 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            Set(background.gameObject, false);
-            Set(currentLevelText.gameObject, false);
-            Set(nextLevelText.gameObject, false);
-
-            Set(currentPoint.gameObject, false); 
-            Set(targetText.gameObject, false);
-            Set(targetPoint.gameObject, false);
-            
-            Set(outlineImage.gameObject, false);
-            Set(fillImage.gameObject, false);
-            Set(movingImage.gameObject, false);
+            group.alpha = 0f;
         }
 
         private void OnGameStarted()

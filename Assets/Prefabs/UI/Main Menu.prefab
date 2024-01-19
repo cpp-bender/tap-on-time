@@ -970,6 +970,7 @@ GameObject:
   - component: {fileID: 1333007793877861605}
   - component: {fileID: 5551086160240284720}
   - component: {fileID: 5078469505337094365}
+  - component: {fileID: 6492402812944021040}
   - component: {fileID: 6755216278804530638}
   m_Layer: 5
   m_Name: Main Menu
@@ -1050,6 +1051,18 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!225 &6492402812944021040
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5910800489216333135}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!114 &6755216278804530638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,6 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859bf70622a5c8b4c827e3f9a89c371f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  group: {fileID: 6492402812944021040}
   backgroundMain: {fileID: 58066269257152190}
   settings: {fileID: 439533203343426552}
   levelText: {fileID: 1208483333593724019}
