@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TapOnTime
 {
-    public class EndMenu : MonoBehaviour, ICommon
+    public class EndMenu : BaseMenu
     {
         [Header("DEPENDENCIES - COMMON")]
         public RectTransform background0;
@@ -51,11 +51,6 @@ namespace TapOnTime
         private void OnGameStarted()
         {
             //TODO:Hanle this
-        }
-
-        public void Set(GameObject go, bool on)
-        {
-            go.SetActive(on);
         }
     }
 }

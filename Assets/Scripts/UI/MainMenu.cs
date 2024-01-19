@@ -3,7 +3,7 @@ using SimpleEvent;
 
 namespace TapOnTime
 {
-    public class MainMenu : MonoBehaviour, ICommon
+    public class MainMenu : BaseMenu
     {
         [Header("DEPENDENCIES - COMMON")]
         public RectTransform backgroundMain;
@@ -34,11 +34,6 @@ namespace TapOnTime
             gameInitEvent.Event -= OnGameInit;
         }
 
-        private void OnGameStarted()
-        {
-
-        }
-
         private void OnGameInit()
         {
             Set(backgroundMain.gameObject, true);
@@ -54,9 +49,9 @@ namespace TapOnTime
             Set(gemCount.gameObject, true);
         }
 
-        public void Set(GameObject go, bool on)
+        private void OnGameStarted()
         {
-            go.SetActive(on);
+
         }
     }
 }
