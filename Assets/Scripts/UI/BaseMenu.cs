@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace TapOnTime
@@ -7,6 +8,11 @@ namespace TapOnTime
         protected void Set(GameObject go, bool on)
         {
             go.SetActive(on);
+        }
+
+        protected void DoSmoothFade(float fStart, float fEnd, float t)
+        {
+            DOTween.To(x => fStart = x, fStart, fEnd, t).Play();
         }
     }
 }

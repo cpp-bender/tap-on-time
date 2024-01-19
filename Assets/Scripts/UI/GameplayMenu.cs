@@ -1,14 +1,12 @@
 using SimpleEvent;
 using UnityEngine;
+using DG.Tweening;
 using TMPro;
 
 namespace TapOnTime
 {
     public class GameplayMenu : BaseMenu
     {
-        [Header("COMPONENTS")]
-        public CanvasGroup group;
-
         [Header("DEPENDENCIES - COMMON")]
         public TextMeshProUGUI currentLevelText;
         public TextMeshProUGUI nextLevelText;
@@ -41,12 +39,12 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            group.alpha = 0f;
+            GetComponent<CanvasGroup>().alpha = 0f;
         }
 
         private void OnGameStarted()
         {
-            //TODO:Hanle this
+            DOTween.To(x => GetComponent<CanvasGroup>().alpha = x, 0f, 1f, .5f);
         }
     }
 }

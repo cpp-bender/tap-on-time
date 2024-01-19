@@ -5,9 +5,6 @@ namespace TapOnTime
 {
     public class RotatingArrowMenu : BaseMenu
     {
-        [Header("COMPONENTS")]
-        public CanvasGroup group;
-
         [Header("DEPENDENCIES")]
         public RectTransform target;
         public RectTransform arrow;
@@ -30,12 +27,12 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            group.alpha = 1f;
+
         }
 
         private void OnGameStarted()
         {
-            //TODO: Handle this
+
         }
     }
 }

@@ -1,15 +1,12 @@
 using UnityEngine;
 using SimpleEvent;
+using DG.Tweening;
 
 namespace TapOnTime
 {
     public class MainMenu : BaseMenu
     {
-        [Header("COMPONENTS")]
-        public CanvasGroup group;
-
         [Header("DEPENDENCIES - COMMON")]
-        public RectTransform backgroundMain;
         public RectTransform settings;
         public RectTransform levelText;
         public RectTransform tapToPlayText;
@@ -39,12 +36,21 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            group.alpha = 1f;
+            StartPlayImageAnimation();
         }
 
         private void OnGameStarted()
         {
 
+        }
+
+        private void StartPlayImageAnimation()
+        {
+            playImage.DOScale(Vector3.one * 1.5f, .5f)
+                .SetEase(Ease.OutQuad)
+                .SetLoops(-1, LoopType.Yoyo)
+                .SetRelative(true)
+                .Play();
         }
     }
 }

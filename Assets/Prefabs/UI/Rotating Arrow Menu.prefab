@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 8226011969871029268}
   - component: {fileID: 6880015653258578472}
   - component: {fileID: 5969360864441439966}
-  - component: {fileID: 4469081096463866573}
   - component: {fileID: 3669408631016000771}
   m_Layer: 5
   m_Name: Rotating Arrow Menu
@@ -162,18 +161,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!225 &4469081096463866573
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5019134623071554093}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
 --- !u!114 &3669408631016000771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce41680372dfe4844ad39f29c214e733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: {fileID: 4469081096463866573}
   target: {fileID: 8538805522125275401}
   arrow: {fileID: 8278659696429265557}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
