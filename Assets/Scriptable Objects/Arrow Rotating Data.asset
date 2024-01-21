@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6c122c3cb99cc4ea246d5dd6826b36, type: 3}
   m_Name: Arrow Rotating Data
   m_EditorClassIdentifier: 
-  rotatingSpeed: 500
+  rotatingSpeed: 100
   rotatingDir: {x: 0, y: 0, z: -1}

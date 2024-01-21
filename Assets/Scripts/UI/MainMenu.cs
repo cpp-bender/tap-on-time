@@ -1,26 +1,28 @@
+using UnityEngine.UI;
 using UnityEngine;
 using SimpleEvent;
 using DG.Tweening;
+using TMPro;
 
 namespace TapOnTime
 {
     public class MainMenu : BaseMenu
     {
         [Header("DEPENDENCIES - COMMON")]
-        public RectTransform settings;
-        public RectTransform levelText;
-        public RectTransform tapToPlayText;
-        public RectTransform playImage;
+        [SerializeField] RectTransform settings;
+        [SerializeField] RectTransform levelText;
+        [SerializeField] RectTransform tapToPlayText;
+        [SerializeField] RectTransform playImage;
 
         [Header("DEPENDENCIES - KEY BAR")]
-        public RectTransform[] keys;
+        [SerializeField] RectTransform[] keys;
 
         [Header("DEPENDENCIES - GEM BAR")]
-        public RectTransform gemCount;
+        [SerializeField] RectTransform gemCount;
 
         [Header("EVENTS")]
-        public VoidEventChannelSO gameInitEvent;
-        public VoidEventChannelSO gameStartEvent;
+        [SerializeField] VoidEventChannelSO gameInitEvent;
+        [SerializeField] VoidEventChannelSO gameStartEvent;
 
         private void OnEnable()
         {
@@ -36,21 +38,33 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            StartPlayImageAnimation();
+            TweenPlayImage();
+            TweenTapToPlayText();
         }
 
         private void OnGameStarted()
         {
-
+            Fade();
         }
 
-        private void StartPlayImageAnimation()
+        private void Fade()
+        {
+            //TODO:Handle this!
+        }
+
+        private void TweenPlayImage()
         {
             playImage.DOScale(Vector3.one * 1.5f, .5f)
                 .SetEase(Ease.OutQuad)
                 .SetLoops(-1, LoopType.Yoyo)
                 .SetRelative(true)
                 .Play();
+        }
+
+        private void TweenTapToPlayText()
+        {
+            var text = tapToPlayText.GetComponent<TextMeshProUGUI>();
+            DOTween.To(x => text.alpha = x, .5f, 1f, .75f).SetLoops(-1, LoopType.Yoyo).Play();
         }
     }
 }

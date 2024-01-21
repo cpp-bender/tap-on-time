@@ -8,22 +8,22 @@ namespace TapOnTime
     public class GameplayMenu : BaseMenu
     {
         [Header("DEPENDENCIES - COMMON")]
-        public TextMeshProUGUI currentLevelText;
-        public TextMeshProUGUI nextLevelText;
+        [SerializeField] TextMeshProUGUI currentLevelText;
+        [SerializeField] TextMeshProUGUI nextLevelText;
 
         [Header("DEPENDENCIES - POINT BAR")]
-        public TextMeshProUGUI currentPoint;
-        public TextMeshProUGUI targetText;
-        public TextMeshProUGUI targetPoint;
+        [SerializeField] TextMeshProUGUI currentPoint;
+        [SerializeField] TextMeshProUGUI targetText;
+        [SerializeField] TextMeshProUGUI targetPoint;
 
         [Header("DEPENDENCIES - LEVEL PROGRESS BAR")]
-        public RectTransform outlineImage;
-        public RectTransform fillImage;
-        public RectTransform movingImage;
+        [SerializeField] RectTransform outlineImage;
+        [SerializeField] RectTransform fillImage;
+        [SerializeField] RectTransform movingImage;
 
         [Header("EVENTS")]
-        public VoidEventChannelSO gameInitEvent;
-        public VoidEventChannelSO gameStartEvent;
+        [SerializeField] VoidEventChannelSO gameInitEvent;
+        [SerializeField] VoidEventChannelSO gameStartEvent;
 
         private void OnEnable()
         {
@@ -39,12 +39,12 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            GetComponent<CanvasGroup>().alpha = 0f;
+            group.alpha = 0f;
         }
 
         private void OnGameStarted()
         {
-            DOTween.To(x => GetComponent<CanvasGroup>().alpha = x, 0f, 1f, .5f);
+            DOTween.To(x => group.alpha = x, 0f, 1f, .5f);
         }
     }
 }

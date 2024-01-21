@@ -6,12 +6,12 @@ namespace TapOnTime
     public class RotatingArrowMenu : BaseMenu
     {
         [Header("DEPENDENCIES")]
-        public RectTransform target;
-        public RectTransform arrow;
+        [SerializeField] RectTransform target;
+        [SerializeField] RectTransform arrow;
 
         [Header("EVENTS")]
-        public VoidEventChannelSO gameInitEvent;
-        public VoidEventChannelSO gameStartEvent;
+        [SerializeField] VoidEventChannelSO gameInitEvent;
+        [SerializeField] VoidEventChannelSO gameStartEvent;
 
         private void OnEnable()
         {

@@ -5,24 +5,21 @@ namespace TapOnTime
 {
     public class EndMenu : BaseMenu
     {
-        [Header("COMPONENTS")]
-        public CanvasGroup group;
-
         [Header("DEPENDENCIES - COMMON")]
-        public RectTransform background1;
-        public RectTransform background2;
-        public RectTransform yourScoreText;
-        public RectTransform congratzText;
-        public RectTransform scoreText;
-        public RectTransform cuteEmoji;
+        [SerializeField] RectTransform background1;
+        [SerializeField] RectTransform background2;
+        [SerializeField] RectTransform yourScoreText;
+        [SerializeField] RectTransform congratzText;
+        [SerializeField] RectTransform scoreText;
+        [SerializeField] RectTransform cuteEmoji;
 
         [Header("DEPENDENCIES - MULTIPLE BAR")]
-        public RectTransform indicator;
-        public RectTransform multiplesParent;
+        [SerializeField] RectTransform indicator;
+        [SerializeField] RectTransform multiplesParent;
 
         [Header("EVENTS")]
-        public VoidEventChannelSO gameInitEvent;
-        public VoidEventChannelSO gameStartEvent;
+        [SerializeField] VoidEventChannelSO gameInitEvent;
+        [SerializeField] VoidEventChannelSO gameStartEvent;
 
         private void OnEnable()
         {

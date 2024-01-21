@@ -1000,7 +1000,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   group: {fileID: 6492402812944021040}
-  backgroundMain: {fileID: 0}
   settings: {fileID: 439533203343426552}
   levelText: {fileID: 1208483333593724019}
   tapToPlayText: {fileID: 892473797862605566}
