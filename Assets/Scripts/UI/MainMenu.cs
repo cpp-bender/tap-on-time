@@ -1,4 +1,3 @@
-using UnityEngine.UI;
 using UnityEngine;
 using SimpleEvent;
 using DG.Tweening;
@@ -49,7 +48,11 @@ namespace TapOnTime
 
         private void Fade()
         {
-            //TODO:Handle this!
+            var cg0 = tapToPlayText.GetComponent<CanvasGroup>();
+            var cg1 = playImage.GetComponent<CanvasGroup>();
+
+            DOTween.To(x => cg0.alpha = x, 1f, 0f, .75f).Play();
+            DOTween.To(x => cg1.alpha = x, 1f, 0f, .75f).Play();
         }
 
         private void TweenPlayImage()
