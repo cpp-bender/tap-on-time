@@ -1,15 +1,10 @@
-using DG.Tweening;
 using SimpleEvent;
 using UnityEngine;
 
 namespace TapOnTime
 {
-    public class RotatingArrowMenu : MonoBehaviour
+    public class CameraController : MonoBehaviour
     {
-        [Header("DEPENDENCIES")]
-        [SerializeField] RectTransform target;
-        [SerializeField] Arrow arrow;
-
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
         [SerializeField] VoidEventChannelSO gameStartEvent;
@@ -17,13 +12,14 @@ namespace TapOnTime
         private void OnEnable()
         {
             gameInitEvent.Event += OnGameInit;
-            gameStartEvent.Event += OnGameStarted;
+            gameStartEvent.Event += OnGameStart;
         }
+
 
         private void OnDisable()
         {
             gameInitEvent.Event -= OnGameInit;
-            gameStartEvent.Event -= OnGameStarted;
+            gameStartEvent.Event -= OnGameStart;
         }
 
         private void OnGameInit()
@@ -31,9 +27,9 @@ namespace TapOnTime
 
         }
 
-        private void OnGameStarted()
+        private void OnGameStart()
         {
-            StartCoroutine(arrow.RotateRoutine());
+
         }
     }
 }

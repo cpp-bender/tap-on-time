@@ -8,7 +8,6 @@ namespace TapOnTime
         [Header("DEPENDENCIES")]
         [SerializeField] GameObject target;
         [SerializeField] ArrowRotatingData rotatingData;
-        [SerializeField] CanvasGroup canvasGroup;
 
         [Header("DEBUG")]
         [SerializeField,] double t;

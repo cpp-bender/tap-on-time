@@ -52,7 +52,8 @@ namespace TapOnTime
             var cg1 = playImage.GetComponent<CanvasGroup>();
 
             DOTween.To(x => cg0.alpha = x, 1f, 0f, .75f).Play();
-            DOTween.To(x => cg1.alpha = x, 1f, 0f, .75f).Play();
+            DOTween.Kill(playImage);
+            playImage.DOScale(Vector3.zero, .25f).Play();
         }
 
         private void TweenPlayImage()

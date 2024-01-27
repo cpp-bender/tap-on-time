@@ -21,6 +21,9 @@ namespace TapOnTime
         [SerializeField] RectTransform fillImage;
         [SerializeField] RectTransform movingImage;
 
+        [Header("DEPENDENCIES - Arrow")]
+        [SerializeField] Arrow arrow;
+
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
         [SerializeField] VoidEventChannelSO gameStartEvent;
@@ -39,7 +42,7 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            group.alpha = 0f;
+            StartCoroutine(arrow.RotateRoutine());
         }
 
         private void OnGameStarted()

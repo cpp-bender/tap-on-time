@@ -18,12 +18,12 @@ namespace CPPBENDER
 
         private void OnGameInit()
         {
-            Debug.Log("Game Init!");
+            //Debug.Log("Game Init!");
         }
 
         private void OnGameStart()
         {
-            Debug.Log("Game Started!");
+            //Debug.Log("Game Started!");
         }
     }
 }
