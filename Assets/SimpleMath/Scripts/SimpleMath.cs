@@ -8,11 +8,11 @@ public static class SimpleMath
     public static Vector3 ClampVector(Vector3 vector3, VectorComponent vectorComponent, float value)
     {
         var dict = new Dictionary<VectorComponent, float>
-        {
-            {VectorComponent.X, vector3.x },
-            {VectorComponent.Y, vector3.y },
-            {VectorComponent.Z, vector3.z},
-        };
+    {
+        {VectorComponent.X, vector3.x },
+        {VectorComponent.Y, vector3.y },
+        {VectorComponent.Z, vector3.z},
+    };
 
         dict[vectorComponent] = value;
 
@@ -22,11 +22,11 @@ public static class SimpleMath
     public static Vector3 ClampVector(Vector3 vector3, VectorComponent[] components, float[] values)
     {
         var dict = new Dictionary<VectorComponent, float>
-        {
-            {VectorComponent.X, vector3.x },
-            {VectorComponent.Y, vector3.y },
-            {VectorComponent.Z, vector3.z},
-        };
+    {
+        {VectorComponent.X, vector3.x },
+        {VectorComponent.Y, vector3.y },
+        {VectorComponent.Z, vector3.z},
+    };
 
         for (int i = 0; i < dict.Count; i++)
         {

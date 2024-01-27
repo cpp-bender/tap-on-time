@@ -1,3 +1,4 @@
+using DG.Tweening;
 using SimpleEvent;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace TapOnTime
     {
         [Header("DEPENDENCIES")]
         [SerializeField] RectTransform target;
-        [SerializeField] RectTransform arrow;
+        [SerializeField] Arrow arrow;
 
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
@@ -27,12 +28,13 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-
+            group.alpha = 0f;
         }
 
         private void OnGameStarted()
         {
-
+            DOTween.To(x => group.alpha = x, 0f, 1f, .75f).Play();
+            StartCoroutine(arrow.RotateRoutine()); 
         }
     }
 }

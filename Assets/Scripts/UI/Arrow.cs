@@ -6,37 +6,33 @@ namespace TapOnTime
     public class Arrow : MonoBehaviour
     {
         [Header("DEPENDENCIES")]
-        public GameObject target;
-        public ArrowRotatingData rotatingData;
+        [SerializeField] GameObject target;
+        [SerializeField] ArrowRotatingData rotatingData;
+        [SerializeField] CanvasGroup canvasGroup;
 
-        private Vector3 rotatingDir;
-        private float rotatingSpeed;
+        [Header("DEBUG")]
+        [SerializeField,] double t;
+        [SerializeField,] float speed;
 
-        private IEnumerator Start()
+        public IEnumerator RotateRoutine()
         {
-            InitRotatingParams();
-            StartCoroutine(StartRotating());
-            yield return null;
-        }
+            float m = rotatingData.Dist;
+            speed = rotatingData.InitSpeed;
 
-        private void InitRotatingParams()
-        {
-            rotatingSpeed = rotatingData.RotatingSpeed;
-            rotatingDir = rotatingData.RotatingDir;
-        }
-
-        private IEnumerator StartRotating()
-        {
             while (true)
             {
-                transform.RotateAround((target.transform.position), rotatingDir, rotatingSpeed* Time.deltaTime);
+                if (t >= .9999f)
+                {
+                    t = 0f;
+                }
+                t += .1f * Time.deltaTime * speed;
+                float ang = (float)t * SimpleMath.TAU;
+                float x = Mathf.Cos(-ang) * m;
+                float y = Mathf.Sin(-ang) * m;
+                transform.position = target.transform.TransformPoint(new Vector3(x, y, transform.position.z));
+                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, (float)t * -360f + -90);
                 yield return null;
             }
-        }
-
-        private void StopRotating()
-        {
-            rotatingSpeed = 0f;
         }
     }
 }

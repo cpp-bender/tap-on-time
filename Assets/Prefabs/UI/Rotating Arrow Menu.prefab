@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   group: {fileID: 548945645250705937}
   target: {fileID: 8538805522125275401}
-  arrow: {fileID: 8278659696429265557}
+  arrow: {fileID: 8900663103539912461}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
 --- !u!1 &6082514322665170295
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 8278659696429265557}
   - component: {fileID: 2990521920454503117}
   - component: {fileID: 8543414698813627642}
-  - component: {fileID: 8770733432056629679}
+  - component: {fileID: 8900663103539912461}
   m_Layer: 5
   m_Name: Arrow
   m_TagString: Untagged
@@ -186,16 +186,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6082514322665170295}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071057, w: 0.7071079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8226011969871029268}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 700, y: 0}
+  m_AnchoredPosition: {x: 700.0004, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2990521920454503117
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8770733432056629679
+--- !u!114 &8900663103539912461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,3 +250,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2761487326049976150}
   rotatingData: {fileID: 11400000, guid: 73f3f41355853c44d89f52ffa42b6de6, type: 2}
+  canvasGroup: {fileID: 0}
+  t: 0
