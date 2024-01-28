@@ -1,4 +1,5 @@
 using System.Collections;
+using SimpleEvent;
 using UnityEngine;
 
 namespace TapOnTime
@@ -13,6 +14,26 @@ namespace TapOnTime
         [SerializeField,] double t;
         [SerializeField,] float speed;
 
+        [Header("EVENTS")]
+        [SerializeField] VoidEventChannelSO gameStartEvent;
+
+        private void OnEnable()
+        {
+            gameStartEvent.Event += OnGameStarted;
+        }
+
+        private void OnDisable()
+        {
+            gameStartEvent.Event -= OnGameStarted;
+        }
+
+        private void OnGameStarted()
+        {
+            speed = 5f;
+        }
+
+        public double T { get => t; }
+
         public IEnumerator RotateRoutine()
         {
             float m = rotatingData.Dist;
@@ -25,7 +46,7 @@ namespace TapOnTime
                     t = 0f;
                 }
                 t += .1f * Time.deltaTime * speed;
-                float ang = (float)t * SimpleMath.TAU;
+                float ang = (float)T * SimpleMath.TAU;
                 float x = Mathf.Cos(-ang) * m;
                 float y = Mathf.Sin(-ang) * m;
                 transform.position = target.transform.TransformPoint(new Vector3(x, y, transform.position.z));

@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
+  checkEvent: {fileID: 11400000, guid: 9d2fd4df4608d2e4ca777865748b8677, type: 2}

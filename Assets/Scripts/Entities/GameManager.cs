@@ -12,13 +12,26 @@ namespace TapOnTime
         [Header("DEPENDENCIES")]
         public VoidEventChannelSO gameInitEvent;
         public VoidEventChannelSO gameStartEvent;
+        public VoidEventChannelSO checkEvent;
+
+        private bool gameStarted = false;
 
         private IEnumerator Start()
         {
+            Application.targetFrameRate = 60;
             gameInitEvent?.Raise();
             yield return new WaitForMouseDown();
             gameStartEvent?.Raise();
+            gameStarted = true;
             DOTween.Init();
+        }
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0) && gameStarted)
+            {
+                checkEvent?.Raise();
+            }
         }
     }
 }
