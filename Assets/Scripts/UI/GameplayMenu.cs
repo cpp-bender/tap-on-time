@@ -1,34 +1,21 @@
 using System.Collections.Generic;
 using System.Collections;
-using DG.Tweening;
 using SimpleEvent;
 using UnityEngine;
 using TMPro;
 
 namespace TapOnTime
 {
-    public class GameplayMenu : BaseMenu
+    public class GameplayMenu : MonoBehaviour
     {
-        [Header("DEPENDENCIES - COMMON")]
+        [Header("DEPENDENCIES")]
         [SerializeField] TextMeshProUGUI currentLevelText;
         [SerializeField] TextMeshProUGUI nextLevelText;
-
-        [Header("DEPENDENCIES - POINT BAR")]
-        [SerializeField] TextMeshProUGUI currentPoint;
-        [SerializeField] TextMeshProUGUI targetText;
-        [SerializeField] TextMeshProUGUI targetPoint;
-
-        [Header("DEPENDENCIES - LEVEL PROGRESS BAR")]
-        [SerializeField] RectTransform outlineImage;
-        [SerializeField] RectTransform fillImage;
-        [SerializeField] RectTransform movingImage;
-
-        [Header("DEPENDENCIES - CIRCULAR BAR")]
+        [SerializeField] PointBar pointBar;
+        [SerializeField] LevelProgressBar progressBar;
         [SerializeField] RectTransform wholeCircle;
-        [SerializeField] List<RectTransform> circularParts;
-
-        [Header("DEPENDENCIES - Arrow")]
         [SerializeField] Arrow arrow;
+        [SerializeField] List<RectTransform> circularParts;
 
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
@@ -36,17 +23,14 @@ namespace TapOnTime
         [SerializeField] VoidEventChannelSO checkEvent;
 
         [Header("DEBUG")]
-        [SerializeField] int oldIndex = -1;
+        [SerializeField] int oldIndex = 0;
         [SerializeField] CirclePart currentCircularPart;
-
-        public VoidEventChannelSO testEvent;
 
         private void OnEnable()
         {
             gameInitEvent.Event += OnGameInit;
             gameStartEvent.Event += OnGameStarted;
             checkEvent.Event += OnTap;
-            testEvent.Event += OnTestEventTriggered;
         }
 
         private void OnDisable()
@@ -54,14 +38,6 @@ namespace TapOnTime
             gameInitEvent.Event -= OnGameInit;
             gameStartEvent.Event -= OnGameStarted;
             checkEvent.Event -= OnTap;
-            testEvent.Event -= OnTestEventTriggered;
-        }
-
-        private void OnTestEventTriggered()
-        {
-            var tr = currentPoint.GetComponent<RectTransform>();
-
-            tr.DOScale(Vector3.one * 5f, .25f).SetRelative(true).SetLoops(2, LoopType.Yoyo).Play();
         }
 
         private void OnTap()
@@ -72,12 +48,19 @@ namespace TapOnTime
         private void OnGameInit()
         {
             StartCoroutine(arrow.RotateRoutine());
+            circularParts[0].gameObject.SetActive(true);
+            currentCircularPart = circularParts[0].GetComponent<CirclePart>();
+
+            pointBar.Fade(0f, .1f);
+            progressBar.Fade(0f,.1f);
         }
 
         private void OnGameStarted()
         {
-            DOTween.To(x => group.alpha = x, 0f, 1f, .5f);
             StartCoroutine(RandomizeCircularParts());
+            
+            pointBar.Fade(1f, 1f);
+            progressBar.Fade(1f, 1f);
         }
 
         private IEnumerator RandomizeCircularParts()
@@ -100,6 +83,11 @@ namespace TapOnTime
 
                 yield return new WaitForSeconds(1f);
             }
+        }
+
+        private void Set(GameObject go, bool on)
+        {
+            go.SetActive(on);
         }
     }
 }

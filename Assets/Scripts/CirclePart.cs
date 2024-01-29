@@ -1,4 +1,3 @@
-using SimpleEvent;
 using UnityEngine;
 
 namespace TapOnTime
@@ -9,8 +8,6 @@ namespace TapOnTime
         public RectTransform circle;
         public float min;
         public float max;
-
-        public VoidEventChannelSO testEvent;
         
         public void Check(double t)
         {
@@ -18,7 +15,6 @@ namespace TapOnTime
             {
                 //TODO: Do stuff
                 Debug.Log("+1");
-                testEvent?.Raise();
             }
             else
             {

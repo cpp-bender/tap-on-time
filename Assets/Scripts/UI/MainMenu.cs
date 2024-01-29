@@ -44,6 +44,7 @@ namespace TapOnTime
         private void OnGameStarted()
         {
             Fade();
+            levelText.gameObject.SetActive(false);
         }
 
         private void Fade()
