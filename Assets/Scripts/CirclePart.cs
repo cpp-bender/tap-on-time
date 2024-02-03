@@ -1,24 +1,32 @@
 using UnityEngine;
+using SimpleEvent;
+using System;
 
 namespace TapOnTime
 {
-    [System.Serializable]
+    [Serializable]
     public class CirclePart : MonoBehaviour
     {
-        public RectTransform circle;
-        public float min;
-        public float max;
-        
-        public void Check(double t)
+        [Header("DEPENDENCIES")]
+        [SerializeField] RectTransform circle;
+        [SerializeField] float[] min;
+        [SerializeField] float[] max;
+
+        [Header("EVENTS")]
+        [SerializeField] VoidEventChannelSO changeCirclePartEvent;
+
+        public void Check(float t)
         {
-            if (t >= min && t<=max)
+            for (int i = 0; i < max.Length; i++)
             {
-                //TODO: Do stuff
-                Debug.Log("+1");
-            }
-            else
-            {
-                //TODO: Do nothing
+                if (t >= min[i] && t <= max[i])
+                {
+                    changeCirclePartEvent.Raise();
+                }
+                else
+                {
+
+                }
             }
         }
     }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections;
 using SimpleEvent;
 using UnityEngine;
 using TMPro;
@@ -14,23 +13,25 @@ namespace TapOnTime
         [SerializeField] PointBar pointBar;
         [SerializeField] LevelProgressBar progressBar;
         [SerializeField] RectTransform wholeCircle;
+        [SerializeField] List<RectTransform> circleParts;
         [SerializeField] Arrow arrow;
-        [SerializeField] List<RectTransform> circularParts;
 
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
         [SerializeField] VoidEventChannelSO gameStartEvent;
         [SerializeField] VoidEventChannelSO checkEvent;
+        [SerializeField] VoidEventChannelSO changeCirclePartEvent;
 
         [Header("DEBUG")]
         [SerializeField] int oldIndex = 0;
-        [SerializeField] CirclePart currentCircularPart;
+        [SerializeField] CirclePart currentCirclePart;
 
         private void OnEnable()
         {
             gameInitEvent.Event += OnGameInit;
             gameStartEvent.Event += OnGameStarted;
             checkEvent.Event += OnTap;
+            changeCirclePartEvent.Event += ChangeCirclePart;
         }
 
         private void OnDisable()
@@ -38,18 +39,18 @@ namespace TapOnTime
             gameInitEvent.Event -= OnGameInit;
             gameStartEvent.Event -= OnGameStarted;
             checkEvent.Event -= OnTap;
+            changeCirclePartEvent.Event -= ChangeCirclePart;
         }
 
         private void OnTap()
         {
-            currentCircularPart.Check(arrow.T);
+            currentCirclePart.Check(arrow.T);
         }
 
         private void OnGameInit()
         {
-            StartCoroutine(arrow.RotateRoutine());
-            circularParts[0].gameObject.SetActive(true);
-            currentCircularPart = circularParts[0].GetComponent<CirclePart>();
+            circleParts[0].gameObject.SetActive(true);
+            currentCirclePart = circleParts[0].GetComponent<CirclePart>();
 
             pointBar.Fade(0f, .1f);
             progressBar.Fade(0f,.1f);
@@ -57,37 +58,26 @@ namespace TapOnTime
 
         private void OnGameStarted()
         {
-            StartCoroutine(RandomizeCircularParts());
-            
+            ChangeCirclePart();
             pointBar.Fade(1f, 1f);
             progressBar.Fade(1f, 1f);
         }
 
-        private IEnumerator RandomizeCircularParts()
+        private void ChangeCirclePart()
         {
-            while (true)
+            int currentIndex;
+            do
             {
-                int currentIndex;
-                do
+                for (int i = 0; i < 4; i++)
                 {
-                    for (int i = 0; i < 4; i++)
-                    {
-                        circularParts[i].gameObject.SetActive(false);
-                    }
-                    currentIndex = Random.Range(0, circularParts.Count);
-                } while (oldIndex == currentIndex);
+                    circleParts[i].gameObject.SetActive(false);
+                }
+                currentIndex = Random.Range(0, circleParts.Count);
+            } while (oldIndex == currentIndex);
 
-                circularParts[currentIndex].gameObject.SetActive(true);
-                currentCircularPart = circularParts[currentIndex].GetComponent<CirclePart>();
-                oldIndex = currentIndex;
-
-                yield return new WaitForSeconds(1f);
-            }
-        }
-
-        private void Set(GameObject go, bool on)
-        {
-            go.SetActive(on);
+            circleParts[currentIndex].gameObject.SetActive(true);
+            currentCirclePart = circleParts[currentIndex].GetComponent<CirclePart>();
+            oldIndex = currentIndex;
         }
     }
 }

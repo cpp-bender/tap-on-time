@@ -11,20 +11,28 @@ namespace TapOnTime
         [SerializeField] ArrowRotatingData rotatingData;
 
         [Header("DEBUG")]
-        [SerializeField,] double t;
-        [SerializeField,] float speed;
+        [SerializeField] float t;
+        [SerializeField] float speed;
 
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameStartEvent;
+        [SerializeField] VoidEventChannelSO gameInitEvent;
 
         private void OnEnable()
         {
             gameStartEvent.Event += OnGameStarted;
+            gameInitEvent.Event += OnGameInit;
         }
 
         private void OnDisable()
         {
             gameStartEvent.Event -= OnGameStarted;
+            gameInitEvent.Event -= OnGameInit;
+        }
+
+        private void OnGameInit()
+        {
+            StartCoroutine(RotateRoutine());
         }
 
         private void OnGameStarted()
@@ -32,7 +40,7 @@ namespace TapOnTime
             speed = 5f;
         }
 
-        public double T { get => t; }
+        public float T { get => t; }
 
         public IEnumerator RotateRoutine()
         {

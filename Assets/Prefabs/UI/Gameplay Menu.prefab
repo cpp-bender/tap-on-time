@@ -89,8 +89,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 802383797024682019}
-  min: 0.25
-  max: 0.75
+  min:
+  - 0.25
+  max:
+  - 0.75
+  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
+    type: 2}
 --- !u!1 &2099009716104471356
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,8 +184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 3443723604052622214}
-  min: 0.5
-  max: 1
+  min:
+  - 0.5
+  max:
+  - 1
+  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
+    type: 2}
 --- !u!1 &2186327041066967661
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,17 +435,19 @@ MonoBehaviour:
   pointBar: {fileID: 3910671358281103413}
   progressBar: {fileID: 7667037869096899781}
   wholeCircle: {fileID: 1687670147215363667}
-  arrow: {fileID: 3816865888656822828}
-  circularParts:
+  circleParts:
   - {fileID: 802383797024682019}
   - {fileID: 4230261848625629787}
   - {fileID: 1132426820531587770}
   - {fileID: 3443723604052622214}
+  arrow: {fileID: 3816865888656822828}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
   checkEvent: {fileID: 11400000, guid: 9d2fd4df4608d2e4ca777865748b8677, type: 2}
+  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
+    type: 2}
   oldIndex: -1
-  currentCircularPart: {fileID: 0}
+  currentCirclePart: {fileID: 0}
 --- !u!1 &3091030629317875467
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,8 +618,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 4230261848625629787}
-  min: 0
-  max: 0.5
+  min:
+  - 0
+  max:
+  - 0.5
+  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
+    type: 2}
 --- !u!1 &4140405426940736685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1347,7 @@ MonoBehaviour:
   t: 0
   speed: 0
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
+  gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
 --- !u!1 &7411602502691871686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,5 +1768,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 0}
-  min: 0.75
-  max: 0.25
+  min:
+  - 0.75
+  - 0
+  max:
+  - 1
+  - 0.25
+  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
+    type: 2}
