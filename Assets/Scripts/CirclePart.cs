@@ -14,6 +14,7 @@ namespace TapOnTime
 
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO changeCirclePartEvent;
+        [SerializeField] VoidEventChannelSO makeProgressEvent;
 
         public void Check(float t)
         {
@@ -22,6 +23,8 @@ namespace TapOnTime
                 if (t >= min[i] && t <= max[i])
                 {
                     changeCirclePartEvent.Raise();
+                    //TODO: change event to float channel
+                    makeProgressEvent.Raise();
                 }
                 else
                 {

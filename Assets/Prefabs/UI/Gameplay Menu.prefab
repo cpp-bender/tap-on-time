@@ -95,6 +95,7 @@ MonoBehaviour:
   - 0.75
   changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
     type: 2}
+  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
 --- !u!1 &2099009716104471356
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +191,7 @@ MonoBehaviour:
   - 1
   changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
     type: 2}
+  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
 --- !u!1 &2186327041066967661
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 99
+  m_text: Level 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e84ec8944a973244db2b2db1e611b9aa, type: 2}
   m_sharedMaterial: {fileID: 4823177158834909849, guid: e84ec8944a973244db2b2db1e611b9aa,
@@ -283,7 +285,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 50
   m_fontSizeBase: 36.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -441,13 +443,15 @@ MonoBehaviour:
   - {fileID: 1132426820531587770}
   - {fileID: 3443723604052622214}
   arrow: {fileID: 3816865888656822828}
+  fillImage: {fileID: 3349131119282301936}
+  movingImage: {fileID: 8261204590459000097}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
   checkEvent: {fileID: 11400000, guid: 9d2fd4df4608d2e4ca777865748b8677, type: 2}
-  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
-    type: 2}
+  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
   oldIndex: -1
   currentCirclePart: {fileID: 0}
+  t: 0
 --- !u!1 &3091030629317875467
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,9 +530,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 4168133453653329204}
   currentLevelText: {fileID: 8208813811536751621}
   nextLevelText: {fileID: 7905334615029093321}
-  outlineImage: {fileID: 3702257025938626234}
-  fillImage: {fileID: 5774753229423261038}
-  movingImage: {fileID: 6417521837504475735}
+  outlineImage: {fileID: 7255512502890658244}
 --- !u!1 &3687529351588932956
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +626,7 @@ MonoBehaviour:
   - 0.5
   changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
     type: 2}
+  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
 --- !u!1 &4140405426940736685
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 99
+  m_text: Level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e84ec8944a973244db2b2db1e611b9aa, type: 2}
   m_sharedMaterial: {fileID: 4823177158834909849, guid: e84ec8944a973244db2b2db1e611b9aa,
@@ -852,7 +855,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 50
   m_fontSizeBase: 36.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1055,6 +1058,7 @@ GameObject:
   - component: {fileID: 6417521837504475735}
   - component: {fileID: 2838331181110643314}
   - component: {fileID: 7519131970337014630}
+  - component: {fileID: 8261204590459000097}
   m_Layer: 5
   m_Name: Moving Image
   m_TagString: Untagged
@@ -1102,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.48584908, b: 0.48584908, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1119,6 +1123,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8261204590459000097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295127680888546214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc38a38e0a92f24394212250c318614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 900
+  t: 0
+  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
 --- !u!1 &6651325500907581697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,6 +1635,7 @@ GameObject:
   - component: {fileID: 5774753229423261038}
   - component: {fileID: 4534742723876755239}
   - component: {fileID: 4970247124485307353}
+  - component: {fileID: 3349131119282301936}
   m_Layer: 5
   m_Name: Fill Image
   m_TagString: Untagged
@@ -1674,11 +1695,26 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3349131119282301936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8269351619622543015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ef636d0b1a53f49ac75a92379bd490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 4970247124485307353}
+  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  t: 0
 --- !u!1 &8492549673475078060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,3 +1812,4 @@ MonoBehaviour:
   - 0.25
   changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
     type: 2}
+  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}

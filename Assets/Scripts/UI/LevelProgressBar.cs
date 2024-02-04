@@ -1,3 +1,4 @@
+using UnityEngine.UI;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
@@ -10,9 +11,7 @@ namespace TapOnTime
         [SerializeField] CanvasGroup canvasGroup;
         [SerializeField] TextMeshProUGUI currentLevelText;
         [SerializeField] TextMeshProUGUI nextLevelText;
-        [SerializeField] RectTransform outlineImage;
-        [SerializeField] RectTransform fillImage;
-        [SerializeField] RectTransform movingImage;
+        [SerializeField] Image outlineImage;
 
         public void Fade(float f, float t)
         {

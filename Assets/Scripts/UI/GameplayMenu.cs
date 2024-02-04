@@ -15,23 +15,26 @@ namespace TapOnTime
         [SerializeField] RectTransform wholeCircle;
         [SerializeField] List<RectTransform> circleParts;
         [SerializeField] Arrow arrow;
+        [SerializeField] FillImage fillImage;
+        [SerializeField] MovingImage movingImage;
 
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
         [SerializeField] VoidEventChannelSO gameStartEvent;
         [SerializeField] VoidEventChannelSO checkEvent;
-        [SerializeField] VoidEventChannelSO changeCirclePartEvent;
+        [SerializeField] VoidEventChannelSO makeProgressEvent;
 
         [Header("DEBUG")]
         [SerializeField] int oldIndex = 0;
         [SerializeField] CirclePart currentCirclePart;
+        [SerializeField] float t = 0f;
 
         private void OnEnable()
         {
             gameInitEvent.Event += OnGameInit;
             gameStartEvent.Event += OnGameStarted;
             checkEvent.Event += OnTap;
-            changeCirclePartEvent.Event += ChangeCirclePart;
+            makeProgressEvent.Event += ChangeCirclePart;
         }
 
         private void OnDisable()
@@ -39,7 +42,7 @@ namespace TapOnTime
             gameInitEvent.Event -= OnGameInit;
             gameStartEvent.Event -= OnGameStarted;
             checkEvent.Event -= OnTap;
-            changeCirclePartEvent.Event -= ChangeCirclePart;
+            makeProgressEvent.Event -= ChangeCirclePart;
         }
 
         private void OnTap()
