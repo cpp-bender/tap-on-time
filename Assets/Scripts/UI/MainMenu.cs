@@ -9,7 +9,7 @@ namespace TapOnTime
     {
         [Header("DEPENDENCIES - COMMON")]
         [SerializeField] RectTransform settings;
-        [SerializeField] RectTransform levelText;
+        [SerializeField] TextMeshProUGUI levelText;
         [SerializeField] RectTransform tapToPlayText;
         [SerializeField] RectTransform playImage;
 
@@ -22,17 +22,20 @@ namespace TapOnTime
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
         [SerializeField] VoidEventChannelSO gameStartEvent;
+        [SerializeField] FloatEventChannelSO levelInitEvent;
 
         private void OnEnable()
         {
             gameInitEvent.Event += OnGameInit;
             gameStartEvent.Event += OnGameStarted;
+            levelInitEvent.Event += OnLevelInit;
         }
 
         private void OnDisable()
         {
             gameStartEvent.Event -= OnGameStarted;
             gameInitEvent.Event -= OnGameInit;
+            levelInitEvent.Event -= OnLevelInit;
         }
 
         private void OnGameInit()
@@ -45,6 +48,12 @@ namespace TapOnTime
         {
             Fade();
             levelText.gameObject.SetActive(false);
+        }
+
+        private void OnLevelInit(float arg)
+        {
+            //TODO: Use stringbuilder later on
+            levelText.text = "Level " + arg.ToString();
         }
 
         private void Fade()

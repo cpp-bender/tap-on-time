@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   group: {fileID: 6492402812944021040}
   settings: {fileID: 439533203343426552}
-  levelText: {fileID: 1208483333593724019}
+  levelText: {fileID: 3192660576001328374}
   tapToPlayText: {fileID: 892473797862605566}
   playImage: {fileID: 4802354752745671563}
   keys:
@@ -1014,6 +1014,7 @@ MonoBehaviour:
   gemCount: {fileID: 7818075735448773989}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
+  levelInitEvent: {fileID: 11400000, guid: ceff89d7ac8827e48a52a618862a0013, type: 2}
 --- !u!1 &6396344087715155768
 GameObject:
   m_ObjectHideFlags: 0
