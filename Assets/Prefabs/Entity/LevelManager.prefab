@@ -49,4 +49,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4d8a4e17d543d6f4f8ed669da2820616, type: 2}
   - {fileID: 11400000, guid: 3442a2e9207a051488522515e03e8e8a, type: 2}
   levelInitEvent: {fileID: 11400000, guid: ceff89d7ac8827e48a52a618862a0013, type: 2}
-  currentLevel: {fileID: 0}
+  currentLevel: {fileID: 11400000, guid: b6b3ba2a13b136b459b0c51b729da2d5, type: 2}

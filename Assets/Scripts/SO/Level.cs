@@ -6,7 +6,9 @@ namespace TapOnTime
     public class Level : ScriptableObject
     {
         [SerializeField] int index;
+        [SerializeField] int score;
 
         public int Index { get => index; }
+        public int Score { get => score; }
     }
 }

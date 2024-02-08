@@ -96,6 +96,7 @@ MonoBehaviour:
   changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
     type: 2}
   makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
 --- !u!1 &2099009716104471356
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +193,7 @@ MonoBehaviour:
   changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
     type: 2}
   makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
 --- !u!1 &2186327041066967661
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 625, y: -274.69983}
+  m_AnchoredPosition: {x: 625, y: -350}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6755601948449430066
@@ -436,7 +438,6 @@ MonoBehaviour:
   nextLevelText: {fileID: 7905334615029093321}
   pointBar: {fileID: 3910671358281103413}
   progressBar: {fileID: 7667037869096899781}
-  wholeCircle: {fileID: 1687670147215363667}
   circleParts:
   - {fileID: 802383797024682019}
   - {fileID: 4230261848625629787}
@@ -445,13 +446,18 @@ MonoBehaviour:
   arrow: {fileID: 3816865888656822828}
   fillImage: {fileID: 3349131119282301936}
   movingImage: {fileID: 8261204590459000097}
+  targetScore: {fileID: 6270732688206476349}
+  currentScore: {fileID: 6562664066451196731}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
   checkEvent: {fileID: 11400000, guid: 9d2fd4df4608d2e4ca777865748b8677, type: 2}
   makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  levelInitEvent: {fileID: 11400000, guid: ceff89d7ac8827e48a52a618862a0013, type: 2}
+  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
   oldIndex: -1
   currentCirclePart: {fileID: 0}
   t: 0
+  score: 1
 --- !u!1 &3091030629317875467
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +633,7 @@ MonoBehaviour:
   changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
     type: 2}
   makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
 --- !u!1 &4140405426940736685
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -625, y: -274.69983}
+  m_AnchoredPosition: {x: -625, y: -350}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6607706740971997538
@@ -1151,7 +1158,7 @@ GameObject:
   - component: {fileID: 3543290655776910537}
   - component: {fileID: 6270732688206476349}
   m_Layer: 5
-  m_Name: Target Point
+  m_Name: Target Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,7 +1431,7 @@ GameObject:
   - component: {fileID: 6316413163698519856}
   - component: {fileID: 6562664066451196731}
   m_Layer: 5
-  m_Name: Current Point
+  m_Name: Current Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1813,3 +1820,4 @@ MonoBehaviour:
   changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
     type: 2}
   makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}

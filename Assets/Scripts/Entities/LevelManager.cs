@@ -9,15 +9,14 @@ namespace TapOnTime
     {
         [Header("DEPENDENCIES")]
         [SerializeField] List<Level> levels;
-        [SerializeField ] FloatEventChannelSO levelInitEvent;
+        [SerializeField ] LevelEventChannelSO levelInitEvent;
 
         [Header("DEBUG")]
         [SerializeField] Level currentLevel;
 
         private void Start()
         {
-            currentLevel = levels[0];
-            levelInitEvent.Raise(currentLevel.Index);
+            levelInitEvent.Raise(currentLevel);
         }
     }
 }

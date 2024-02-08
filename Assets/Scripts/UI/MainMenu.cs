@@ -22,7 +22,7 @@ namespace TapOnTime
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
         [SerializeField] VoidEventChannelSO gameStartEvent;
-        [SerializeField] FloatEventChannelSO levelInitEvent;
+        [SerializeField] LevelEventChannelSO levelInitEvent;
 
         private void OnEnable()
         {
@@ -50,10 +50,10 @@ namespace TapOnTime
             levelText.gameObject.SetActive(false);
         }
 
-        private void OnLevelInit(float arg)
+        private void OnLevelInit(Level arg)
         {
             //TODO: Use stringbuilder later on
-            levelText.text = "Level " + arg.ToString();
+            levelText.text = "Level " + arg.Index.ToString();
         }
 
         private void Fade()

@@ -15,6 +15,7 @@ namespace TapOnTime
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO changeCirclePartEvent;
         [SerializeField] VoidEventChannelSO makeProgressEvent;
+        [SerializeField] IntEventChannelSO addScoreEvent;
 
         public void Check(float t)
         {
@@ -25,6 +26,7 @@ namespace TapOnTime
                     changeCirclePartEvent.Raise();
                     //TODO: change event to float channel
                     makeProgressEvent.Raise();
+                    addScoreEvent.Raise(1);
                 }
                 else
                 {

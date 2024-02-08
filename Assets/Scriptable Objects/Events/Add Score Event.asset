@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6d89e55ad98814fa185fe08ae4b679, type: 3}
-  m_Name: Level 3
+  m_Script: {fileID: 11500000, guid: a61b239ab2c5a3c4890f91c10bdb7f76, type: 3}
+  m_Name: Add Score Event
   m_EditorClassIdentifier: 
-  index: 3
-  score: 75
