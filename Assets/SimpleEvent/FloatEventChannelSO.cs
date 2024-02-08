@@ -6,11 +6,11 @@ namespace SimpleEvent
     [CreateAssetMenu(menuName = "Simple Event/Float Event", fileName = "Float Event ")]
     public class FloatEventChannelSO : ScriptableObject
     {
-        public event UnityAction<float> OnEventRaised;
+        public event UnityAction<float> Event;
 
         public void Raise(float arg)
         {
-            OnEventRaised?.Invoke(arg);
+            Event?.Invoke(arg);
         }
     }
 }

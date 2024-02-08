@@ -6,11 +6,11 @@ namespace SimpleEvent
     [CreateAssetMenu(menuName ="Simple Event/Vector3 Event", fileName ="Vector3 Event")]
     public class Vector3EventChannelSO : ScriptableObject
     {
-        public event UnityAction<Vector3> OnEventRaised;
+        public event UnityAction<Vector3> Event;
 
         public void Raise(Vector3 pos)
         {
-            OnEventRaised?.Invoke(pos);
+            Event?.Invoke(pos);
         }
     }
 }
