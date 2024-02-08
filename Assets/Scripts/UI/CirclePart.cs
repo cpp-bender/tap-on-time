@@ -8,14 +8,11 @@ namespace TapOnTime
     public class CirclePart : MonoBehaviour
     {
         [Header("DEPENDENCIES")]
-        [SerializeField] RectTransform circle;
         [SerializeField] float[] min;
         [SerializeField] float[] max;
 
         [Header("EVENTS")]
-        [SerializeField] VoidEventChannelSO changeCirclePartEvent;
-        [SerializeField] VoidEventChannelSO makeProgressEvent;
-        [SerializeField] IntEventChannelSO addScoreEvent;
+        [SerializeField] VoidEventChannelSO tapSuccessEvent;
 
         public void Check(float t)
         {
@@ -23,10 +20,7 @@ namespace TapOnTime
             {
                 if (t >= min[i] && t <= max[i])
                 {
-                    changeCirclePartEvent.Raise();
-                    //TODO: change event to float channel
-                    makeProgressEvent.Raise();
-                    addScoreEvent.Raise(1);
+                    tapSuccessEvent.Raise();
                 }
                 else
                 {

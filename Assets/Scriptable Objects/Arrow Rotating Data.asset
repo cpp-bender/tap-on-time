@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Arrow Rotating Data
   m_EditorClassIdentifier: 
   dist: 88
-  initSpeed: 1
+  speed: 1

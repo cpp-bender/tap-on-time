@@ -10,9 +10,9 @@ namespace TapOnTime
     public class GameManager : MonoBehaviour
     {
         [Header("DEPENDENCIES")]
-        public VoidEventChannelSO gameInitEvent;
-        public VoidEventChannelSO gameStartEvent;
-        public VoidEventChannelSO checkEvent;
+        [SerializeField] VoidEventChannelSO gameInitEvent;
+        [SerializeField] VoidEventChannelSO gameStartEvent;
+        [SerializeField] VoidEventChannelSO checkEvent;
 
         private bool gameStarted = false;
 

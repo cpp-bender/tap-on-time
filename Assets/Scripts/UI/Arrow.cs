@@ -10,13 +10,13 @@ namespace TapOnTime
         [SerializeField] GameObject target;
         [SerializeField] ArrowRotatingData rotatingData;
 
-        [Header("DEBUG")]
-        [SerializeField] float t;
-        [SerializeField] float speed;
-
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameStartEvent;
         [SerializeField] VoidEventChannelSO gameInitEvent;
+
+        [Header("DEBUG")]
+        [SerializeField] float t;
+        [SerializeField] float speed;
 
         private void OnEnable()
         {
@@ -45,7 +45,7 @@ namespace TapOnTime
         public IEnumerator RotateRoutine()
         {
             float m = rotatingData.Dist;
-            speed = rotatingData.InitSpeed;
+            speed = rotatingData.Speed;
 
             while (true)
             {

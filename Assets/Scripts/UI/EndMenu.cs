@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TapOnTime
 {
-    public class EndMenu : BaseMenu
+    public class EndMenu : MonoBehaviour
     {
         [Header("DEPENDENCIES - COMMON")]
         [SerializeField] RectTransform background1;
@@ -35,7 +35,7 @@ namespace TapOnTime
 
         private void OnGameInit()
         {
-            group.alpha = 0f;
+            //group.alpha = 0f;
         }
 
         private void OnGameStarted()

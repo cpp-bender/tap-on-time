@@ -5,10 +5,10 @@ namespace TapOnTime
     [CreateAssetMenu(menuName = "Tap On Time/Arrow Rotating Data", fileName = "Arrow Rotating Data")]
     public class ArrowRotatingData : ScriptableObject
     {
-        [SerializeField, Range(0f, 100f)] float dist;
-        [SerializeField] float initSpeed;
+        [SerializeField, Range(0f, 100f), Tooltip("Distance to the center")] float dist;
+        [SerializeField, Tooltip("Initial speed")] float speed;
 
         public float Dist { get => dist; }
-        public float InitSpeed { get => initSpeed; }
+        public float Speed { get => speed; }
     }
 }

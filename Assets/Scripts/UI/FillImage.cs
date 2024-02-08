@@ -10,7 +10,7 @@ namespace TapOnTime
         [SerializeField] Image image;
 
         [Header("EVENTS")]
-        [SerializeField] VoidEventChannelSO makeProgressEvent;
+        [SerializeField] VoidEventChannelSO tapSuccessEvent;
 
         [Header("DEBUG")]
         [SerializeField] float t = 0f;
@@ -22,12 +22,12 @@ namespace TapOnTime
 
         private void OnEnable()
         {
-            makeProgressEvent.Event += MakeProgress;
+            tapSuccessEvent.Event += MakeProgress;
         }
 
         private void OnDisable()
         {
-            makeProgressEvent.Event -= MakeProgress;
+            tapSuccessEvent.Event -= MakeProgress;
         }
 
         private void MakeProgress()

@@ -2254,7 +2254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef69f98735477a49accfc2e126d14c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: {fileID: 5951495284786967932}
   background1: {fileID: 6412023342452319284}
   background2: {fileID: 5243090787692408125}
   yourScoreText: {fileID: 310323421454302832}

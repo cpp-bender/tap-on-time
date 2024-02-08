@@ -12,14 +12,8 @@ namespace TapOnTime
         [SerializeField, Range(0f, 1f)] float t = 0f;
 
         [Header("EVENTS")]
-        [SerializeField] VoidEventChannelSO makeProgressEvent;
+        [SerializeField] VoidEventChannelSO tapSuccessEvent;
         [SerializeField] VoidEventChannelSO gameInitEvent;
-
-        private void OnEnable()
-        {
-            makeProgressEvent.Event += MakeProgress;
-            gameInitEvent.Event += Init;
-        }
 
         private void Init()
         {
@@ -28,9 +22,15 @@ namespace TapOnTime
             transform.localPosition = new Vector3(-range, y, z);
         }
 
+        private void OnEnable()
+        {
+            tapSuccessEvent.Event += MakeProgress;
+            gameInitEvent.Event += Init;
+        }
+
         private void OnDisable()
         {
-            makeProgressEvent.Event -= MakeProgress;
+            tapSuccessEvent.Event -= MakeProgress;
             gameInitEvent.Event -= Init;
         }
 

@@ -88,15 +88,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67014d5473973bc459bc770fe328edac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle: {fileID: 802383797024682019}
   min:
   - 0.25
   max:
   - 0.75
-  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
-    type: 2}
-  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
-  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
+  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
 --- !u!1 &2099009716104471356
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,15 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67014d5473973bc459bc770fe328edac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle: {fileID: 3443723604052622214}
   min:
   - 0.5
   max:
   - 1
-  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
-    type: 2}
-  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
-  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
+  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
 --- !u!1 &2186327041066967661
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,9 +280,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 50
-  m_fontSizeBase: 36.1
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -436,28 +428,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevelText: {fileID: 8208813811536751621}
   nextLevelText: {fileID: 7905334615029093321}
+  targetScoreText: {fileID: 6270732688206476349}
+  currentScoreText: {fileID: 6562664066451196731}
   pointBar: {fileID: 3910671358281103413}
   progressBar: {fileID: 7667037869096899781}
+  arrow: {fileID: 3816865888656822828}
   circleParts:
   - {fileID: 802383797024682019}
   - {fileID: 4230261848625629787}
   - {fileID: 1132426820531587770}
   - {fileID: 3443723604052622214}
-  arrow: {fileID: 3816865888656822828}
-  fillImage: {fileID: 3349131119282301936}
-  movingImage: {fileID: 8261204590459000097}
-  targetScore: {fileID: 6270732688206476349}
-  currentScore: {fileID: 6562664066451196731}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
   checkEvent: {fileID: 11400000, guid: 9d2fd4df4608d2e4ca777865748b8677, type: 2}
-  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
   levelInitEvent: {fileID: 11400000, guid: ceff89d7ac8827e48a52a618862a0013, type: 2}
-  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
-  oldIndex: -1
-  currentCirclePart: {fileID: 0}
-  t: 0
-  score: 1
+  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
 --- !u!1 &3091030629317875467
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,9 +519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 4168133453653329204}
-  currentLevelText: {fileID: 8208813811536751621}
-  nextLevelText: {fileID: 7905334615029093321}
-  outlineImage: {fileID: 7255512502890658244}
 --- !u!1 &3687529351588932956
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,15 +607,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67014d5473973bc459bc770fe328edac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle: {fileID: 4230261848625629787}
   min:
   - 0
   max:
   - 0.5
-  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
-    type: 2}
-  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
-  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
+  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
 --- !u!1 &4140405426940736685
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: 0, y: -136}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2933817303269755244
@@ -701,8 +679,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Target
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e84ec8944a973244db2b2db1e611b9aa, type: 2}
-  m_sharedMaterial: {fileID: 4823177158834909849, guid: e84ec8944a973244db2b2db1e611b9aa,
+  m_fontAsset: {fileID: 11400000, guid: f8ae2beed80802b4d8d171c5c64936ef, type: 2}
+  m_sharedMaterial: {fileID: 4823177158834909849, guid: f8ae2beed80802b4d8d171c5c64936ef,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -728,9 +706,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 50
-  m_fontSizeBase: 36.1
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -863,9 +841,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 50
-  m_fontSizeBase: 36.1
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -1144,7 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 900
   t: 0
-  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
 --- !u!1 &6651325500907581697
 GameObject:
@@ -1211,10 +1189,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 25
+  m_text: 999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e84ec8944a973244db2b2db1e611b9aa, type: 2}
-  m_sharedMaterial: {fileID: 4823177158834909849, guid: e84ec8944a973244db2b2db1e611b9aa,
+  m_fontAsset: {fileID: 11400000, guid: f8ae2beed80802b4d8d171c5c64936ef, type: 2}
+  m_sharedMaterial: {fileID: 4823177158834909849, guid: f8ae2beed80802b4d8d171c5c64936ef,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1240,9 +1218,9 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 50
-  m_fontSizeBase: 36.1
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -1371,10 +1349,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 7411602502691871686}
   rotatingData: {fileID: 11400000, guid: 73f3f41355853c44d89f52ffa42b6de6, type: 2}
-  t: 0
-  speed: 0
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
+  t: 0
+  speed: 0
 --- !u!1 &7411602502691871686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 61}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6316413163698519856
@@ -1567,7 +1545,7 @@ GameObject:
   - component: {fileID: 1808397405540418071}
   - component: {fileID: 3910671358281103413}
   m_Layer: 5
-  m_Name: Point Bar
+  m_Name: Score Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1720,7 +1698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 4970247124485307353}
-  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
+  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
   t: 0
 --- !u!1 &8492549673475078060
 GameObject:
@@ -1810,14 +1788,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67014d5473973bc459bc770fe328edac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle: {fileID: 0}
   min:
   - 0.75
   - 0
   max:
   - 1
   - 0.25
-  changeCirclePartEvent: {fileID: 11400000, guid: 0a73264a4dd61144198defed23839f86,
-    type: 2}
-  makeProgressEvent: {fileID: 11400000, guid: 00a7f9cccf42da941b7c21645803d9ef, type: 2}
-  addScoreEvent: {fileID: 11400000, guid: ed016988767a52944b5184f5b4d1e4fd, type: 2}
+  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}

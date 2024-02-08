@@ -1,3 +1,4 @@
+using UnityEngine.UI;
 using UnityEngine;
 using SimpleEvent;
 using DG.Tweening;
@@ -5,19 +6,18 @@ using TMPro;
 
 namespace TapOnTime
 {
-    public class MainMenu : BaseMenu
+    public class MainMenu : MonoBehaviour
     {
         [Header("DEPENDENCIES - COMMON")]
-        [SerializeField] RectTransform settings;
         [SerializeField] TextMeshProUGUI levelText;
         [SerializeField] RectTransform tapToPlayText;
         [SerializeField] RectTransform playImage;
 
         [Header("DEPENDENCIES - KEY BAR")]
-        [SerializeField] RectTransform[] keys;
+        [SerializeField] Image[] keys;
 
         [Header("DEPENDENCIES - GEM BAR")]
-        [SerializeField] RectTransform gemCount;
+        [SerializeField] TextMeshProUGUI gemScore;
 
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;

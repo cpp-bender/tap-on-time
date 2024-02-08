@@ -10,38 +10,36 @@ namespace TapOnTime
         [Header("DEPENDENCIES")]
         [SerializeField] TextMeshProUGUI currentLevelText;
         [SerializeField] TextMeshProUGUI nextLevelText;
-        [SerializeField] PointBar pointBar;
-        [SerializeField] LevelProgressBar progressBar;
-        [SerializeField] List<RectTransform> circleParts;
-        [SerializeField] Arrow arrow;
-        [SerializeField] FillImage fillImage;
-        [SerializeField] MovingImage movingImage;
         [SerializeField] TextMeshProUGUI targetScoreText;
         [SerializeField] TextMeshProUGUI currentScoreText;
+        [Space(10f)]
+
+        [SerializeField] PointBar pointBar;
+        [SerializeField] ProgressBar progressBar;
+        [SerializeField] Arrow arrow;
+        [SerializeField] List<RectTransform> circleParts;
 
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameInitEvent;
         [SerializeField] VoidEventChannelSO gameStartEvent;
         [SerializeField] VoidEventChannelSO checkEvent;
-        [SerializeField] VoidEventChannelSO makeProgressEvent;
         [SerializeField] LevelEventChannelSO levelInitEvent;
-        [SerializeField] IntEventChannelSO addScoreEvent;
+        [SerializeField] VoidEventChannelSO tapSuccessEvent;
 
-        [Header("DEBUG")]
-        [SerializeField] int oldIndex = 0;
-        [SerializeField] CirclePart currentCirclePart;
-        [SerializeField] float t = 0f;
-        [SerializeField] int currentScore;
-        [SerializeField] int targetScore;
+        private CirclePart currentCirclePart;
+        private int oldIndex = 0;
+        private float t = 0f;
+        private int currentScore;
+        private int targetScore;
 
         private void OnEnable()
         {
             gameInitEvent.Event += OnGameInit;
             gameStartEvent.Event += OnGameStarted;
             checkEvent.Event += OnTap;
-            makeProgressEvent.Event += ChangeCirclePart;
             levelInitEvent.Event += OnLevelInit;
-            addScoreEvent.Event += AddScore;
+            tapSuccessEvent.Event += ChangeCirclePart;
+            tapSuccessEvent.Event += AddScore;
         }
 
         private void OnDisable()
@@ -49,27 +47,9 @@ namespace TapOnTime
             gameInitEvent.Event -= OnGameInit;
             gameStartEvent.Event -= OnGameStarted;
             checkEvent.Event -= OnTap;
-            makeProgressEvent.Event -= ChangeCirclePart;
             levelInitEvent.Event -= OnLevelInit;
-            addScoreEvent.Event -= AddScore;
-        }
-
-        private void AddScore(int arg)
-        {
-            currentScoreText.text = (currentScore + arg).ToString();
-            currentScore += arg;
-        }
-
-        private void OnTap()
-        {
-            currentCirclePart.Check(arrow.T);
-        }
-
-        private void OnLevelInit(Level level)
-        {
-            currentLevelText.text = "Level " + level.Index.ToString();
-            nextLevelText.text = "Level " + (level.Index + 1).ToString();
-            targetScoreText.text = level.Score.ToString();
+            tapSuccessEvent.Event -= ChangeCirclePart;
+            tapSuccessEvent.Event -= AddScore;
         }
 
         private void OnGameInit()
@@ -81,11 +61,30 @@ namespace TapOnTime
             progressBar.Fade(0f, .1f);
         }
 
+        private void OnLevelInit(Level level)
+        {
+            currentLevelText.text = "Level " + level.Index.ToString();
+            nextLevelText.text = "Level " + (level.Index + 1).ToString();
+            targetScoreText.text = level.Score.ToString();
+            currentScore = 1;
+        }
+
+        private void OnTap()
+        {
+            currentCirclePart.Check(arrow.T);
+        }
+
         private void OnGameStarted()
         {
             ChangeCirclePart();
             pointBar.Fade(1f, 1f);
             progressBar.Fade(1f, 1f);
+        }
+
+        private void AddScore()
+        {
+            currentScoreText.text = (currentScore + 1).ToString();
+            currentScore += 1;
         }
 
         private void ChangeCirclePart()

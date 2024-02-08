@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 752395405585446388}
   - component: {fileID: 573577120571535756}
   m_Layer: 5
-  m_Name: Gem Count
+  m_Name: Gem Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -898,7 +898,6 @@ GameObject:
   - component: {fileID: 1333007793877861605}
   - component: {fileID: 5551086160240284720}
   - component: {fileID: 5078469505337094365}
-  - component: {fileID: 6492402812944021040}
   - component: {fileID: 6755216278804530638}
   m_Layer: 5
   m_Name: Main Menu
@@ -920,9 +919,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 439533203343426552}
+  - {fileID: 1208483333593724019}
   - {fileID: 6181575991159829641}
   - {fileID: 1911482222968172224}
-  - {fileID: 1208483333593724019}
   - {fileID: 892473797862605566}
   - {fileID: 4802354752745671563}
   m_Father: {fileID: 0}
@@ -978,18 +977,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!225 &6492402812944021040
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5910800489216333135}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
 --- !u!114 &6755216278804530638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,16 +989,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859bf70622a5c8b4c827e3f9a89c371f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: {fileID: 6492402812944021040}
-  settings: {fileID: 439533203343426552}
+  group: {fileID: 0}
   levelText: {fileID: 3192660576001328374}
   tapToPlayText: {fileID: 892473797862605566}
   playImage: {fileID: 4802354752745671563}
   keys:
-  - {fileID: 5238767511856071196}
-  - {fileID: 7892787026546557325}
-  - {fileID: 3275770631367740069}
-  gemCount: {fileID: 7818075735448773989}
+  - {fileID: 5342121935524935138}
+  - {fileID: 6735928720940413872}
+  - {fileID: 728160649622650948}
+  gemScore: {fileID: 573577120571535756}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
   levelInitEvent: {fileID: 11400000, guid: ceff89d7ac8827e48a52a618862a0013, type: 2}
