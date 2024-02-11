@@ -13,21 +13,28 @@ namespace TapOnTime
         [Header("EVENTS")]
         [SerializeField] VoidEventChannelSO gameStartEvent;
         [SerializeField] VoidEventChannelSO gameInitEvent;
+        [SerializeField] VoidEventChannelSO tapSuccessEvent;
 
         [Header("DEBUG")]
         [SerializeField] float t;
-        [SerializeField] float speed;
+
+        private float speed;
+        private float speedFactor;
+
+        public float T { get => t; }
 
         private void OnEnable()
         {
             gameStartEvent.Event += OnGameStarted;
             gameInitEvent.Event += OnGameInit;
+            tapSuccessEvent.Event += () => speed += speedFactor;
         }
 
         private void OnDisable()
         {
             gameStartEvent.Event -= OnGameStarted;
             gameInitEvent.Event -= OnGameInit;
+            tapSuccessEvent.Event -= () => speed += speedFactor;
         }
 
         private void OnGameInit()
@@ -40,12 +47,11 @@ namespace TapOnTime
             speed = 5f;
         }
 
-        public float T { get => t; }
-
         public IEnumerator RotateRoutine()
         {
             float m = rotatingData.Dist;
             speed = rotatingData.Speed;
+            speedFactor = rotatingData.T;
 
             while (true)
             {

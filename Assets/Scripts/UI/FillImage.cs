@@ -1,6 +1,5 @@
 using UnityEngine.UI;
 using UnityEngine;
-using SimpleEvent;
 
 namespace TapOnTime
 {
@@ -9,30 +8,13 @@ namespace TapOnTime
         [Header("DEPENDENCIES")]
         [SerializeField] Image image;
 
-        [Header("EVENTS")]
-        [SerializeField] VoidEventChannelSO tapSuccessEvent;
-
-        [Header("DEBUG")]
-        [SerializeField] float t = 0f;
-
         private void Start()
         {
-            image.fillAmount = t;
+            image.fillAmount = 0f;
         }
 
-        private void OnEnable()
+        public void MakeProgress(float t)
         {
-            tapSuccessEvent.Event += MakeProgress;
-        }
-
-        private void OnDisable()
-        {
-            tapSuccessEvent.Event -= MakeProgress;
-        }
-
-        private void MakeProgress()
-        {
-            t += .1f;
             image.fillAmount = t;
         }
     }

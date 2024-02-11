@@ -432,6 +432,8 @@ MonoBehaviour:
   currentScoreText: {fileID: 6562664066451196731}
   pointBar: {fileID: 3910671358281103413}
   progressBar: {fileID: 7667037869096899781}
+  fillImage: {fileID: 3349131119282301936}
+  movingImage: {fileID: 8261204590459000097}
   arrow: {fileID: 3816865888656822828}
   circleParts:
   - {fileID: 802383797024682019}
@@ -443,6 +445,9 @@ MonoBehaviour:
   checkEvent: {fileID: 11400000, guid: 9d2fd4df4608d2e4ca777865748b8677, type: 2}
   levelInitEvent: {fileID: 11400000, guid: ceff89d7ac8827e48a52a618862a0013, type: 2}
   tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
+  completeRatio: 0
+  currentScore: 0
+  targetScore: 0
 --- !u!1 &3091030629317875467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,8 +1126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 900
-  t: 0
-  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
 --- !u!1 &6651325500907581697
 GameObject:
@@ -1351,6 +1354,7 @@ MonoBehaviour:
   rotatingData: {fileID: 11400000, guid: 73f3f41355853c44d89f52ffa42b6de6, type: 2}
   gameStartEvent: {fileID: 11400000, guid: 8a49dcd971b1df042a6abacf1a8dcb81, type: 2}
   gameInitEvent: {fileID: 11400000, guid: 2574e8ee5f89abf4c8b61ba13c9fb7ea, type: 2}
+  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
   t: 0
   speed: 0
 --- !u!1 &7411602502691871686
@@ -1462,7 +1466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ae2beed80802b4d8d171c5c64936ef, type: 2}
   m_sharedMaterial: {fileID: 4823177158834909849, guid: f8ae2beed80802b4d8d171c5c64936ef,
@@ -1698,8 +1702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 4970247124485307353}
-  tapSuccessEvent: {fileID: 11400000, guid: c42e7799d51c17b4fb43252c06102497, type: 2}
-  t: 0
 --- !u!1 &8492549673475078060
 GameObject:
   m_ObjectHideFlags: 0

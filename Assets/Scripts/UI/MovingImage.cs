@@ -8,11 +8,7 @@ namespace TapOnTime
         [Header("DEPENDENCIES")]
         [SerializeField] float range;
 
-        [Header("DEBUG")]
-        [SerializeField, Range(0f, 1f)] float t = 0f;
-
         [Header("EVENTS")]
-        [SerializeField] VoidEventChannelSO tapSuccessEvent;
         [SerializeField] VoidEventChannelSO gameInitEvent;
 
         private void Init()
@@ -24,19 +20,16 @@ namespace TapOnTime
 
         private void OnEnable()
         {
-            tapSuccessEvent.Event += MakeProgress;
             gameInitEvent.Event += Init;
         }
 
         private void OnDisable()
         {
-            tapSuccessEvent.Event -= MakeProgress;
             gameInitEvent.Event -= Init;
         }
 
-        private void MakeProgress()
+        public void MakeProgress(float t)
         {
-            t += .1f;
             float x = Mathf.Lerp(-range, range, t);
             float y = transform.localPosition.y;
             float z = transform.localPosition.z;

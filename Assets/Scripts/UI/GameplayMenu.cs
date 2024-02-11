@@ -16,6 +16,8 @@ namespace TapOnTime
 
         [SerializeField] PointBar pointBar;
         [SerializeField] ProgressBar progressBar;
+        [SerializeField] FillImage fillImage;
+        [SerializeField] MovingImage movingImage;
         [SerializeField] Arrow arrow;
         [SerializeField] List<RectTransform> circleParts;
 
@@ -26,11 +28,13 @@ namespace TapOnTime
         [SerializeField] LevelEventChannelSO levelInitEvent;
         [SerializeField] VoidEventChannelSO tapSuccessEvent;
 
+        [Header("DEBUG")]
+        [SerializeField] float completeRatio;
+        [SerializeField] int currentScore;
+        [SerializeField] int targetScore;
+
         private CirclePart currentCirclePart;
-        private int oldIndex = 0;
-        private float t = 0f;
-        private int currentScore;
-        private int targetScore;
+        private int tempInt = 0;
 
         private void OnEnable()
         {
@@ -40,6 +44,7 @@ namespace TapOnTime
             levelInitEvent.Event += OnLevelInit;
             tapSuccessEvent.Event += ChangeCirclePart;
             tapSuccessEvent.Event += AddScore;
+            tapSuccessEvent.Event += HandleProgress;
         }
 
         private void OnDisable()
@@ -50,6 +55,7 @@ namespace TapOnTime
             levelInitEvent.Event -= OnLevelInit;
             tapSuccessEvent.Event -= ChangeCirclePart;
             tapSuccessEvent.Event -= AddScore;
+            tapSuccessEvent.Event -= HandleProgress;
         }
 
         private void OnGameInit()
@@ -66,7 +72,8 @@ namespace TapOnTime
             currentLevelText.text = "Level " + level.Index.ToString();
             nextLevelText.text = "Level " + (level.Index + 1).ToString();
             targetScoreText.text = level.Score.ToString();
-            currentScore = 1;
+            targetScore = level.Score;
+            currentScore = 0;
         }
 
         private void OnTap()
@@ -97,11 +104,18 @@ namespace TapOnTime
                     circleParts[i].gameObject.SetActive(false);
                 }
                 currentIndex = Random.Range(0, circleParts.Count);
-            } while (oldIndex == currentIndex);
+            } while (tempInt == currentIndex);
 
             circleParts[currentIndex].gameObject.SetActive(true);
             currentCirclePart = circleParts[currentIndex].GetComponent<CirclePart>();
-            oldIndex = currentIndex;
+            tempInt = currentIndex;
+        }
+
+        private void HandleProgress()
+        {
+            completeRatio = (float)currentScore / (float)targetScore;
+            fillImage.MakeProgress(completeRatio);
+            movingImage.MakeProgress(completeRatio);
         }
     }
 }
